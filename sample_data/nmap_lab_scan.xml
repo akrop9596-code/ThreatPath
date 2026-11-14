@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<nmaprun scanner="nmap" args="nmap -sV -T3 --top-ports 100 -oX sample_data/nmap_lab_scan.xml 10.10.20.0/24" start="1793257200" startstr="Thu Oct 29 09:50:00 2026" version="7.94SVN" xmloutputversion="1.05">
+  <scaninfo type="syn" protocol="tcp" numservices="100" services="21-23,25,53,80,110,111,135,139,143,443,445,993,995,1723,3306,3389,5432,5900,6379,8080,8443"/>
+  <host starttime="1793257201" endtime="1793257212">
+    <status state="up" reason="arp-response" reason_ttl="0"/>
+    <address addr="10.10.20.10" addrtype="ipv4"/>
+    <address addr="02:42:0A:0A:14:0A" addrtype="mac" vendor="LabVirtualNic"/>
+    <hostnames><hostname name="edge-gw-proxy.lab.local" type="PTR"/></hostnames>
+    <ports>
+      <port protocol="tcp" portid="22">
+        <state state="open" reason="syn-ack" reason_ttl="64"/>
+        <service name="ssh" product="OpenSSH" version="8.9p1 Ubuntu 3ubuntu0.10" extrainfo="Ubuntu Linux; protocol 2.0" method="probed" conf="10">
+          <cpe>cpe:/a:openbsd:openssh:8.9p1</cpe>
+        </service>
+      </port>
+      <port protocol="tcp" portid="80">
+        <state state="open" reason="syn-ack" reason_ttl="64"/>
+        <service name="http" product="Apache httpd" version="2.4.49" extrainfo="(Unix)" method="probed" conf="10">
+          <cpe>cpe:/a:apache:http_server:2.4.49</cpe>
+        </service>
+      </port>
+      <port protocol="tcp" portid="443">
+        <state state="open" reason="syn-ack" reason_ttl="64"/>
+        <service name="https" product="Apache httpd" version="2.4.49" tunnel="ssl" method="probed" conf="10">
+          <cpe>cpe:/a:apache:http_server:2.4.49</cpe>
+        </service>
+      </port>
+    </ports>
+    <os><osmatch name="Linux 5.15 (Ubuntu 22.04)" accuracy="98"/></os>
+  </host>
+  <host starttime="1793257213" endtime="1793257225">
+    <status state="up" reason="arp-response" reason_ttl="0"/>
+    <address addr="10.10.20.25" addrtype="ipv4"/>
+    <address addr="02:42:0A:0A:14:19" addrtype="mac" vendor="LabVirtualNic"/>
+    <hostnames><hostname name="erp-core-api.lab.local" type="PTR"/></hostnames>
+    <ports>
+      <port protocol="tcp" portid="22">
+        <state state="open" reason="syn-ack" reason_ttl="64"/>
+        <service name="ssh" product="OpenSSH" version="9.2p1 Debian 2+deb12u3" method="probed" conf="10">
+          <cpe>cpe:/a:openbsd:openssh:9.2p1</cpe>
+        </service>
+      </port>
+      <port protocol="tcp" portid="8080">
+        <state state="open" reason="syn-ack" reason_ttl="64"/>
+        <service name="http" product="Apache Tomcat/Coyote JSP engine" version="9.0.30" method="probed" conf="10">
+          <cpe>cpe:/a:apache:tomcat:9.0.30</cpe>
+        </service>
+      </port>
+      <port protocol="tcp" portid="6379">
+        <state state="open" reason="syn-ack" reason_ttl="64"/>
+        <service name="redis" product="Redis key-value store" version="6.0.15" method="probed" conf="10">
+          <cpe>cpe:/a:pivotal_software:redis:6.0.15</cpe>
+        </service>
+      </port>
+    </ports>
+    <os><osmatch name="Linux 6.1 (Debian 12)" accuracy="97"/></os>
+  </host>
+  <host starttime="1793257226" endtime="1793257235">
+    <status state="up" reason="arp-response" reason_ttl="0"/>
+    <address addr="10.10.20.50" addrtype="ipv4"/>
+    <address addr="02:42:0A:0A:14:32" addrtype="mac" vendor="LabVirtualNic"/>
+    <hostnames><hostname name="fin-ledger-db.lab.local" type="PTR"/></hostnames>
+    <ports>
+      <port protocol="tcp" portid="3306">
+        <state state="open" reason="syn-ack" reason_ttl="64"/>
+        <service name="mysql" product="MySQL" version="8.0.27" method="probed" conf="10">
+          <cpe>cpe:/a:oracle:mysql:8.0.27</cpe>
+        </service>
+      </port>
+      <port protocol="tcp" portid="5432">
+        <state state="open" reason="syn-ack" reason_ttl="64"/>
+        <service name="postgresql" product="PostgreSQL DB" version="13.4" method="probed" conf="10">
+          <cpe>cpe:/a:postgresql:postgresql:13.4</cpe>
+        </service>
+      </port>
+    </ports>
+    <os><osmatch name="Linux 5.15 (Ubuntu 22.04)" accuracy="99"/></os>
+  </host>
+  <host starttime="1793257236" endtime="1793257242">
+    <status state="up" reason="arp-response" reason_ttl="0"/>
+    <address addr="10.10.20.105" addrtype="ipv4"/>
+    <address addr="02:42:0A:0A:14:69" addrtype="mac" vendor="LabVirtualNic"/>
+    <hostnames><hostname name="dev-bastion-01.lab.local" type="PTR"/></hostnames>
+    <ports>
+      <port protocol="tcp" portid="22">
+        <state state="open" reason="syn-ack" reason_ttl="64"/>
+        <service name="ssh" product="OpenSSH" version="9.6p1" method="probed" conf="10">
+          <cpe>cpe:/a:openbsd:openssh:9.6p1</cpe>
+        </service>
+      </port>
+    </ports>
+    <os><osmatch name="Linux 6.8 (Ubuntu 24.04)" accuracy="98"/></os>
+  </host>
+  <runstats><finished time="1793257243" timestr="Thu Oct 29 09:50:43 2026" elapsed="43.00" summary="Nmap done; 256 IP addresses (4 hosts up) scanned in 43.00 seconds" exit="success"/><hosts up="4" down="252" total="256"/></runstats>
+</nmaprun>

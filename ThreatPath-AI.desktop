@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=ThreatPath AI
+GenericName=Cybersecurity Investigation Platform
+Comment=Launch ThreatPath AI System, Network & Code Security Platform
+Exec=bash -c 'cd "$(dirname "%k")" && ./launch-threatpath.sh'
+Icon=security-high
+Terminal=true
+Categories=Security;System;Network;
+StartupNotify=true

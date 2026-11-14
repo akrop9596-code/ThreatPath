@@ -1,0 +1,56 @@
+[
+  {
+    "timestamp": "2026-10-29T09:51:40.112000+0530",
+    "event_type": "alert",
+    "src_ip": "198.51.100.77",
+    "src_port": 51422,
+    "dest_ip": "10.10.20.10",
+    "dest_port": 80,
+    "proto": "TCP",
+    "alert": {
+      "action": "allowed",
+      "gid": 1,
+      "signature_id": 2034039,
+      "rev": 3,
+      "signature": "ET WEB_SERVER Apache 2.4.49/2.4.50 Path Traversal Attempt (CVE-2021-41773)",
+      "category": "Web Application Attack",
+      "severity": 1
+    }
+  },
+  {
+    "timestamp": "2026-10-29T09:51:44.405000+0530",
+    "event_type": "alert",
+    "src_ip": "10.10.20.10",
+    "src_port": 44215,
+    "dest_ip": "10.10.20.25",
+    "dest_port": 6379,
+    "proto": "TCP",
+    "alert": {
+      "action": "allowed",
+      "gid": 1,
+      "signature_id": 2029811,
+      "rev": 2,
+      "signature": "ET EXPLOIT Internal Lateral Movement Redis CONFIG GET Command Detected",
+      "category": "Attempted Administrator Privilege Gain",
+      "severity": 1
+    }
+  },
+  {
+    "timestamp": "2026-10-29T09:51:48.900000+0530",
+    "event_type": "alert",
+    "src_ip": "10.10.20.10",
+    "src_port": 53011,
+    "dest_ip": "8.8.8.8",
+    "dest_port": 53,
+    "proto": "UDP",
+    "alert": {
+      "action": "allowed",
+      "gid": 1,
+      "signature_id": 2031500,
+      "rev": 1,
+      "signature": "ET DNS High-Entropy Subdomain Label Possible DNS Exfiltration / Beaconing",
+      "category": "Potentially Bad Traffic",
+      "severity": 2
+    }
+  }
+]

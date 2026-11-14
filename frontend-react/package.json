@@ -1,0 +1,48 @@
+{
+  "name": "threatpath-ai-frontend",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "electron:dev": "THREATPATH_DEV_URL=http://localhost:5173 electron .",
+    "dist:linux": "vite build && electron-builder --linux AppImage deb",
+    "dist:win": "vite build && electron-builder --win nsis"
+  },
+  "dependencies": {
+    "lucide-react": "^0.363.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.3",
+    "vite": "^5.2.0"
+  },
+  "main": "electron-main.cjs",
+  "build": {
+    "appId": "io.threatpath.ai",
+    "productName": "ThreatPath AI",
+    "files": [
+      "dist/**/*",
+      "electron-main.cjs",
+      "package.json"
+    ],
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "category": "Security"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    }
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "conn_logs": [
+    {
+      "ts": "2026-10-29T09:51:40Z",
+      "uid": "C1a2b3",
+      "id.orig_h": "198.51.100.77",
+      "id.orig_p": 51422,
+      "id.resp_h": "10.10.20.10",
+      "id.resp_p": 80,
+      "proto": "tcp",
+      "service": "http",
+      "duration": 0.42,
+      "orig_bytes": 215,
+      "resp_bytes": 1480,
+      "conn_state": "SF"
+    },
+    {
+      "ts": "2026-10-29T09:51:42Z",
+      "uid": "C4d5e6",
+      "id.orig_h": "10.10.20.10",
+      "id.orig_p": 44210,
+      "id.resp_h": "10.10.20.25",
+      "id.resp_p": 8080,
+      "proto": "tcp",
+      "service": "http",
+      "duration": 1.15,
+      "orig_bytes": 340,
+      "resp_bytes": 920,
+      "conn_state": "SF"
+    },
+    {
+      "ts": "2026-10-29T09:51:44Z",
+      "uid": "C7g8h9",
+      "id.orig_h": "10.10.20.10",
+      "id.orig_p": 44215,
+      "id.resp_h": "10.10.20.25",
+      "id.resp_p": 6379,
+      "proto": "tcp",
+      "service": "redis",
+      "duration": 0.18,
+      "orig_bytes": 64,
+      "resp_bytes": 512,
+      "conn_state": "SF"
+    },
+    {
+      "ts": "2026-10-29T09:51:46Z",
+      "uid": "C9j0k1",
+      "id.orig_h": "10.10.20.25",
+      "id.orig_p": 55100,
+      "id.resp_h": "10.10.20.50",
+      "id.resp_p": 3306,
+      "proto": "tcp",
+      "service": "mysql",
+      "duration": 3.8,
+      "orig_bytes": 1240,
+      "resp_bytes": 8420,
+      "conn_state": "SF"
+    }
+  ],
+  "dns_logs": [
+    {
+      "ts": "2026-10-29T09:51:48Z",
+      "uid": "D1x2y3",
+      "id.orig_h": "10.10.20.10",
+      "id.resp_h": "8.8.8.8",
+      "query": "aGVsbG8tdGhyZWF0cGF0aC1leGZpbC1jaHVazAx.c2-telemetry-sync.example.net",
+      "qtype_name": "A",
+      "rcode_name": "NXDOMAIN"
+    },
+    {
+      "ts": "2026-10-29T09:51:49Z",
+      "uid": "D4x5y6",
+      "id.orig_h": "10.10.20.10",
+      "id.resp_h": "8.8.8.8",
+      "query": "aGVsbG8tdGhyZWF0cGF0aC1leGZpbC1jaHVazAy.c2-telemetry-sync.example.net",
+      "qtype_name": "A",
+      "rcode_name": "NXDOMAIN"
+    }
+  ]
+}

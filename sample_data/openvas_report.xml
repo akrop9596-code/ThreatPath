@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report id="openvas-rep-2026-1029" format_id="a994b278-1f62-11e1-96ac-406186ea4fc5">
+  <results max="10" start="1">
+    <result id="res-001">
+      <name>Apache HTTP Server 2.4.49 Path Traversal and RCE Vulnerability (CVE-2021-41773)</name>
+      <host>10.10.20.10<asset asset_id="AST-DMZ-01"/></host>
+      <port>80/tcp</port>
+      <nvt oid="1.3.6.1.4.1.25623.1.0.146846">
+        <cvss_base>9.8</cvss_base>
+        <cve>CVE-2021-41773</cve>
+        <solution type="VendorFix">Upgrade Apache HTTP Server to version 2.4.51 or later and ensure Require all denied is set on root directory.</solution>
+      </nvt>
+      <severity>9.8</severity>
+      <qod><value>95</value></qod>
+      <description>Apache HTTP Server 2.4.49 allows an attacker to use a path traversal attack to map URLs to files outside the directories configured by Alias-like directives, leading to Remote Code Execution when mod_cgi is enabled.</description>
+    </result>
+    <result id="res-002">
+      <name>Apache Tomcat AJP Ghostcat File Read / Inclusion (CVE-2020-1938)</name>
+      <host>10.10.20.25<asset asset_id="AST-APP-02"/></host>
+      <port>8080/tcp</port>
+      <nvt oid="1.3.6.1.4.1.25623.1.0.143546">
+        <cvss_base>9.8</cvss_base>
+        <cve>CVE-2020-1938</cve>
+        <solution type="VendorFix">Upgrade Apache Tomcat to 9.0.31 or later, disable AJP connector if unused, or configure requiredSecret attribute.</solution>
+      </nvt>
+      <severity>9.8</severity>
+      <qod><value>90</value></qod>
+      <description>Apache Tomcat 9.0.30 processes untrusted AJP requests and exposes sensitive configuration files and web application deployment descriptors.</description>
+    </result>
+    <result id="res-003">
+      <name>Redis Unauthenticated Configuration &amp; Lua Sandbox Escape (CVE-2022-0543)</name>
+      <host>10.10.20.25<asset asset_id="AST-APP-02"/></host>
+      <port>6379/tcp</port>
+      <nvt oid="1.3.6.1.4.1.25623.1.0.147812">
+        <cvss_base>10.0</cvss_base>
+        <cve>CVE-2022-0543</cve>
+        <solution type="Mitigation">Bind Redis to 127.0.0.1, enable requirepass / ACL authentication, and apply Debian upstream security updates.</solution>
+      </nvt>
+      <severity>10.0</severity>
+      <qod><value>92</value></qod>
+      <description>Redis 6.0.15 instance listening on 0.0.0.0:6379 accepts unauthenticated CONFIG GET commands and is vulnerable to Lua package escaping.</description>
+    </result>
+    <result id="res-004">
+      <name>MySQL Server 8.0.27 Optimizer Privilege Escalation / DoS (CVE-2022-21245)</name>
+      <host>10.10.20.50<asset asset_id="AST-DB-03"/></host>
+      <port>3306/tcp</port>
+      <nvt oid="1.3.6.1.4.1.25623.1.0.148001">
+        <cvss_base>6.5</cvss_base>
+        <cve>CVE-2022-21245</cve>
+        <solution type="VendorFix">Upgrade Oracle MySQL Server to 8.0.28 or later and restrict network access strictly to application tier security groups.</solution>
+      </nvt>
+      <severity>6.5</severity>
+      <qod><value>85</value></qod>
+      <description>Vulnerability in the MySQL Server product of Oracle MySQL (component: Server: Security: Privileges). Easily exploitable vulnerability allows high privileged attacker with network access via multiple protocols to compromise MySQL Server.</description>
+    </result>
+  </results>
+</report>

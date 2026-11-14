@@ -1,0 +1,4 @@
+# Harmless Vulnerable Dependency Fixture for ThreatPath AI SCA Testing
+pyyaml==5.3.1
+urllib3==1.25.8
+django==2.2.10

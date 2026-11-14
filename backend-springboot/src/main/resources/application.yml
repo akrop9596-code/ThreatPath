@@ -1,0 +1,26 @@
+server:
+  port: ${SERVER_PORT:8080}
+
+spring:
+  application:
+    name: threatpath-ai-backend
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:127.0.0.1}:${MYSQL_PORT:3306}/${MYSQL_DATABASE:threatpath_db}?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: ${MYSQL_USER:threatpath_user}
+    password: ${MYSQL_PASSWORD:threatpath_local_pass}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+
+threatpath:
+  security:
+    allowed-subnets: "127.0.0.1/32,10.10.20.0/24,192.168.56.0/24"
+    rate-limit-requests-per-minute: 60
+  agent:
+    base-url: ${PYTHON_AGENT_URL:http://127.0.0.1:8000}
+    internal-api-key: ${PYTHON_AGENT_API_KEY:tp_internal_agent_key_2026}

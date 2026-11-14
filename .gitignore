@@ -1,0 +1,92 @@
+
+# =====================================
+# ENVIRONMENT VARIABLES AND SECRETS
+# =====================================
+.env
+.env.*
+!.env.example
+
+# Private keys and certificates
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+
+# =====================================
+# PYTHON
+# =====================================
+__pycache__/
+*.py[cod]
+*.pyo
+*.class
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# =====================================
+# JAVA / SPRING BOOT / MAVEN
+# =====================================
+target/
+*.jar
+*.war
+*.class
+*.log
+
+# =====================================
+# REACT / NODE / ELECTRON
+# =====================================
+node_modules/
+dist/
+build/
+coverage/
+.npm/
+*.tsbuildinfo
+
+# =====================================
+# DATABASE / LOCAL DATA
+# =====================================
+*.db
+*.sqlite
+*.sqlite3
+*.dump
+*.bak
+
+# =====================================
+# LOGS AND TEMPORARY FILES
+# =====================================
+logs/
+*.log
+*.tmp
+*.temp
+
+# =====================================
+# SECURITY SCAN DATA
+# =====================================
+scan-results/
+security-reports/
+private-data/
+captures/
+pcap/
+*.pcap
+*.pcapng
+
+# =====================================
+# IDE AND OPERATING SYSTEM
+# =====================================
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# =====================================
+# BACKUPS
+# =====================================
+*.bak
+*.old
+*.backup

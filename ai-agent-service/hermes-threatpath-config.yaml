@@ -1,0 +1,33 @@
+# ============================================================================
+# NousResearch/hermes-agent Configuration for ThreatPath AI
+# Copy or merge into ~/.hermes/config.yaml when running Hermes Agent locally
+# Repository: https://github.com/NousResearch/hermes-agent
+# ============================================================================
+
+model:
+  provider: "ollama" # Or openai-compatible local vLLM / Llama.cpp server
+  name: "nousresearch/hermes-3-llama-3.1-8b"
+  base_url: "http://127.0.0.1:11434/v1"
+  temperature: 0.1
+
+# SECURITY HARDENING: Disable Hermes's built-in unrestricted shell/terminal toolset.
+# Hermes is strictly restricted to ThreatPath AI's validated MCP security adapters.
+toolsets:
+  terminal:
+    enabled: false
+  file_editor:
+    enabled: false
+  browser:
+    enabled: false
+
+# Register ThreatPath AI's Controlled Security Tool Registry via MCP (stdio)
+mcp_servers:
+  threatpath_security:
+    command: "python3"
+    args:
+      - "-m"
+      - "app.agent.hermes_integration"
+      - "--mcp-stdio"
+    env:
+      AUTHORIZED_SUBNETS: "127.0.0.1/32,10.10.20.0/24,192.168.56.0/24"
+      THREATPATH_LOCAL_PRIVACY_MODE: "STRICT_LOCAL_ONLY"

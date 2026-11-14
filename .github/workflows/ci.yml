@@ -1,0 +1,21 @@
+name: ThreatPath AI — DevSecOps & Automated QA Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  python-agent-and-security-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Check Host Environment & Tool Readiness
+        run: python3 scripts/check_env.py
+      - name: Run Full Unit, Integration, Hermes, Multi-User & Security Audit Test Suite
+        run: python3 ai-agent-service/tests/test_threatpath.py
